@@ -158,11 +158,8 @@ class EOSCreateAccountForm extends Component {
                                         placeholder={intl.get('EOSCreateAccountForm.accountToFundAccount')}
                                         optionFilterProp="children"
                                         filterOption={(input, option) => {
-                                            console.log(option.props);
-                                            console.log(option.props.children);
                                             return option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                        }
+                                        }}
                                     >
                                         {getAccount.map(v => <Option value={v} key={v}>{v}</Option>)}
                                     </Select>
@@ -175,9 +172,9 @@ class EOSCreateAccountForm extends Component {
                                         showSearch
                                         placeholder={intl.get('EOSCreateAccountForm.ownerKey')}
                                         optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                        filterOption={(input, option) => {
+                                            return option.props.children.props.title.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }}
                                     >
                                         {getKeyList.map(v => <Option value={v.publicKey} key={v.publicKey}><Tooltip placement="right" title={`${v.name} - ${v.publicKey}`}>{v.name} - {v.publicKey}</Tooltip></Option>)}
                                     </Select>
@@ -190,9 +187,9 @@ class EOSCreateAccountForm extends Component {
                                         showSearch
                                         placeholder={intl.get('EOSCreateAccountForm.activeKey')}
                                         optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                        filterOption={(input, option) => {
+                                            return option.props.children.props.title.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }}
                                     >
                                         {getKeyList.map(v => <Option value={v.publicKey} key={v.publicKey}><Tooltip placement="right" title={`${v.name} - ${v.publicKey}`}>{v.name} - {v.publicKey}</Tooltip></Option>)}
                                     </Select>

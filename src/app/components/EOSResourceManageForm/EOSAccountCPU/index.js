@@ -179,7 +179,7 @@ class EOSAccountCPU extends Component {
                         </div>
                     </Col>
                     <Col span={16}>
-                        <div className={style.CPUPriceBar}>{intl.get('EOSResourceManageForm.currentCPUPrice')} : <span className={style.CPUPrice}>{price.toString(10)} EOS/ms</span></div>
+                        <div className={style.CPUPriceBar}>{intl.get('EOSResourceManageForm.currentCPUPrice')} : <span className={style.CPUPrice}>{new BigNumber(price).toString(10)} EOS/ms</span></div>
                         <div className={style.CPUForm}>
                             <Form labelCol={{ span: 24 }} wrapperCol={{ span: 24 }} className={style.transForm}>
                                 <Form.Item className={style.type}>

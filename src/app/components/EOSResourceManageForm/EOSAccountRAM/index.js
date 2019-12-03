@@ -189,7 +189,7 @@ class EOSAccountRAM extends Component {
                         </div>
                     </Col>
                     <Col span={16}>
-                        <div className={style.RAMPriceBar}>{intl.get('EOSResourceManageForm.currentRAMPrice')} : <span className={style.RAMPrice}>{price.toFixed(4).toString(10)} EOS/KB</span></div>
+                        <div className={style.RAMPriceBar}>{intl.get('EOSResourceManageForm.currentRAMPrice')} : <span className={style.RAMPrice}>{new BigNumber(price).toFixed(4).toString(10)} EOS/KB</span></div>
                         <div className={style.RAMForm}>
                             <Form labelCol={{ span: 24 }} wrapperCol={{ span: 24 }} className={style.transForm}>
                                 <Form.Item className={style.type}>

@@ -180,7 +180,7 @@ class EOSAccountNET extends Component {
                         </div>
                     </Col>
                     <Col span={16}>
-                        <div className={style.NETPriceBar}>{intl.get('EOSResourceManageForm.currentNetPrice')} : <span className={style.NETPrice}>{price} EOS/KB</span></div>
+                        <div className={style.NETPriceBar}>{intl.get('EOSResourceManageForm.currentNetPrice')} : <span className={style.NETPrice}>{new BigNumber(price).toString(10)} EOS/KB</span></div>
                         <div className={style.NETForm}>
                             <Form labelCol={{ span: 24 }} wrapperCol={{ span: 24 }} className={style.transForm}>
                                 <Form.Item className={style.type}>

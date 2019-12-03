@@ -120,7 +120,7 @@ class EOSNormalTransForm extends Component {
   }
 
   checkAmount = (rule, value, callback) => {
-    if (!Number.isNaN(Number(value)) && Number(value) > 0) {
+    if (!Number.isNaN(parseFloat(value)) && Number(value) > 0) {
       callback();
     } else {
       callback(intl.get('EOSNormalTransForm.invalid'));
