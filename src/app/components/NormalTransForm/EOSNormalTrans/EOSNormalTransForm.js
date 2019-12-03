@@ -128,7 +128,19 @@ class EOSNormalTransForm extends Component {
   }
 
   checkMemo = (rule, value, callback) => {
-    callback();
+    let len = 0;
+    for (let i = 0; i < value.length; i++) {
+      if (value.charCodeAt(i) > 127 || value.charCodeAt(i) === 94) {
+        len += 2;
+      } else {
+        len++;
+      }
+    }
+    if (len > 256) {
+      callback(intl.get('EOSNormalTransForm.invalidMemo'));
+    } else {
+      callback();
+    }
   }
 
   render() {
@@ -170,8 +182,8 @@ class EOSNormalTransForm extends Component {
                     (<Input.Password placeholder={intl.get('Backup.enterPassword')} prefix={<Icon type="lock" className="colorInput" />} />)}
                 </Form.Item>
               }
-              <Form.Item label={intl.get('EOSNormalTransForm.memo')}>
-                {getFieldDecorator('memo', { rules: [{ message: intl.get('EOSNormalTransForm.invalid'), validator: this.checkMemo }] })
+              <Form.Item label={`${intl.get('EOSNormalTransForm.memo')} ( ${intl.get('EOSNormalTransForm.optional')} )`}>
+                {getFieldDecorator('memo', { rules: [{ message: intl.get('EOSNormalTransForm.invalidMemo'), validator: this.checkMemo }] })
                   (<TextArea style={{ borderRadius: '4px' }} placeholder={intl.get('EOSNormalTransForm.memo')} prefix={<Icon type="credit-card" className="colorInput" />} />)}
               </Form.Item>
             </Form>

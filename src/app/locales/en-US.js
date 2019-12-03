@@ -222,6 +222,8 @@ const en_US = {
     'EOSNormalTransForm.invalid': 'Invalid',
     'EOSNormalTransForm.recipientAccount': 'Recipient Account',
     'EOSNormalTransForm.memo': 'Memo',
+    'EOSNormalTransForm.invalidMemo': 'Memo is too long',
+    'EOSNormalTransForm.optional': 'Optional',
 
     'AdvancedOptionForm.advancedOptions': 'Advanced Options',
     'AdvancedOptionForm.cancel': 'Cancel',
